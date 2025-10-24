@@ -4,4 +4,3 @@ try:
 except:
     pass
 
-print("game not crashed, continue server running")
