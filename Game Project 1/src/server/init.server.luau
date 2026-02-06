@@ -3,7 +3,6 @@
 --     Instance.new("Part", game.Workspace)
 
 --     if count == 10 then
---         break
--- end
+
 
 
