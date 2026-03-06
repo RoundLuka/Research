@@ -43,3 +43,5 @@ trigger:GetAttributeChangedSignal("Triggered"):Connect(function()
         lamp.Material = Enum.Material.Plastic
     end
 end)
+
+-- 
