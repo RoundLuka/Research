@@ -34,6 +34,3 @@ function doSomething(ragaca)
 end
 
 
-local param1 = "weyw ywerywe"
-local result = doSomething(param1)
-print(result)
