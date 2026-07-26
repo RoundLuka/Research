@@ -34,3 +34,13 @@ function doSomething(ragaca)
 end
 
 
+-- end
+
+
+local names = {'Vaxo', 'Gigi', 'Giorgi', 'Luka'}
+--      Index    1         2      3
+
+
+for index, value in pairs(names) do
+    print(value)
+end
