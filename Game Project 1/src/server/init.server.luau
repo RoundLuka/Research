@@ -4,6 +4,3 @@
 
 -- გვაქვს 3 ციკლი: for, while, repeat
 
--- start, stop, step
--- for ewryeruyeruyeri = 1, 10, 3 do
---     print(ewrye
