@@ -1,12 +1,21 @@
-local camera = game.Workspace.Camera
-camera.CameraType = Enum.CameraType.Scriptable
+local TweenService = game:GetService("TweenService")
 
-local plr: Player = game.Players.LocalPlayer
+local function tweenModel(model: Model, tweenInfo: TweenInfo, destination: CFrame)
+    local cframeValue = Instance.new("CFrameValue")
+    cframeValue.Value = model:GetPivot()
 
-local char = plr.Character
-local rootPart: BasePart = char:WaitForChild("HumanoidRootPart")
-local humanoid: Humanoid = char:WaitForChild("Humanoid")
+    local connection = cframeValue.Changed:Connect(function(newCFrame)
+        model:PivotTo(newCFrame)
+    end)
 
-humanoid.WalkSpeed = 0
-humanoid.JumpPower = 0
-camera.CFrame = CFrame.new(rootPart.Position + Vector3.new(0, 0, -8), rootPart.Position)
+    local tween = TweenService:Create(cframeValue, tweenInfo, {Value = destination})
+
+    tween:Play()
+
+    tween.Completed:Connect(function()
+        connection:Disconnect() -- Prevent memory leaks
+        cframeValue:Destroy()
+    end)
+
+    return tween
+end
